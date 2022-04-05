@@ -41,9 +41,59 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
+                <span class="navbar-text">
+                    <!--use the .navbar-text class to vertical align any elements inside the navbar that are not links (ensures proper padding and text color).-->
+                    <a data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span>Login
+                    </a>
+                </span>
             </div>
         </div>
     </nav>
+    <div id="loginModal" class="modal fade" role="dialog">
+        <!--the .fade class adds a transition effect which fades the modal in and out. Remove this class if you do not want this effect.
+The attribute role="dialog" improves accessibility for people using screen readers.-->
+        <div class="modal-dialog modal-lg" role="content">
+            <!--.modal-lg class for large modals-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label for="email id" class="sr-only col-form-label">Email Id</label><!--sr only means only for screen readers-->
+                                <!-- col-form-label is necessary for label to be enabled-->
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="Password" class="sr-only col-form-label">Password</label><!--sr only means only for screen readers-->
+                                <!-- col-form-label is necessary for label to be enabled-->
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                            <div class="form-group col-sm-auto">
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label">Remember me</label>
+                               </div>
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-sm ml-1" >Sign-in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -57,7 +107,10 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <button type="button" class="btn-block" style="background-color:gold"><a href="#myCard">Reserve Table</a></button>
+                    <a role="button" class="btn btn-block nav-link btn-warning" href="#myCard" data-toggle="tooltip"
+                        data-html="true" title="Or Call us at<br><strong>+8512345678</strong>"
+                        data-placement="bottom">Reserve Table</a>
+                    <!--The toggle tells Bootstrap what to do and the target tells Bootstrap which element is going to open-->
                 </div>
             </div>
         </div>
@@ -96,13 +149,14 @@
             <div class="col col-sm col-md">
                 <div class="media">
                     <div class="media-body">
-                    <h2 class="mt-0 media-heading">Weekend Grand Buffet
-                        <span class="badge badge-danger">New</span>  
-                    </h2>
-                    <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing
-                        appetizers,
-                        six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just
-                        $19.99 per person </p>
+                        <h2 class="mt-0 media-heading">Weekend Grand Buffet
+                            <span class="badge badge-danger">New</span>
+                        </h2>
+                        <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing
+                            appetizers,
+                            six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for
+                            just
+                            $19.99 per person </p>
                     </div>
                     <img class="d-flex ml-3  img-thumbnail align-self-center" src="img/buffet.png" alt="buffet">
                 </div>
@@ -131,7 +185,8 @@
         </div>
         <div class="row row-content" id="myCard">
             <div class="card col-12 col-sm-8 offset-sm-2">
-                <h3 class="card-header  text-white" style="background-color:rgba(235, 251, 7, 0.958);">Reserve a Table</h3>
+                <h3 class="card-header  text-white" style="background-color:rgba(235, 251, 7, 0.958);">Reserve a Table
+                </h3>
                 <div class="card-body">
                     <form>
                         <div class="form-group row">
@@ -157,7 +212,7 @@
                                 <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
                             </div>
                             <div class="col-sm-1 form-check">
-                                <input type="radio" class="form-check-input" id="radio4"name="optradio"
+                                <input type="radio" class="form-check-input" id="radio4" name="optradio"
                                     value="option4">
                                 <label for="radio4" class="form-check-label">4</label>
                                 <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
@@ -180,13 +235,11 @@
                             <label for="Date and Time" class="col-sm-4 col-form-label">Date and Time</label>
                             <!-- col-form-label is necessary for label to be enabled-->
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="Date" name="Date"
-                                    placeholder="Date">
+                                <input type="text" class="form-control" id="Date" name="Date" placeholder="Date">
                                 <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
                             </div>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="Time" name="Time"
-                                    placeholder="Time">
+                                <input type="text" class="form-control" id="Time" name="Time" placeholder="Time">
                                 <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
                             </div>
                         </div>
@@ -195,7 +248,7 @@
                                 <button type="submit" class="btn btn-primary">Reserve</button>
                             </div>
                         </div>
-                   </form>
+                    </form>
                 </div>
             </div>
         </div>
@@ -251,6 +304,15 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+    <!--The ready event occurs when the DOM (document object model) has been loaded.Because this event occurs after the document is ready, it is a good place to have all other jQuery events and functions. Like in the example above.-->
+    <!--The dollar sign is commonly used as a shortcut to the function document.getElementById().-->
+    <!--The dollar sign ($) and the underscore (_) characters are JavaScript identifiers, which just means that they identify an object in the same way a name would.-->
+    <!--whereever data-toggle="tooltip" attribute is found call tooltip-->
     <!--Bootstrap by default uses the JQuery Javascript library for its Javascript plugins. Hence the need to include JQuery library in the web page.-->
 </body>
 
