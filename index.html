@@ -98,6 +98,103 @@ The attribute role="dialog" improves accessibility for people using screen reade
             </div>
         </div>
     </div>
+
+    <div id="ReserveModal" class="modal fade" role="dialog">
+        <!--the .fade class adds a transition effect which fades the modal in and out. Remove this class if you do not want this effect.
+The attribute role="dialog" improves accessibility for people using screen readers.-->
+        <div class="modal-dialog modal-lg" role="content">
+            <!--.modal-lg class for large modals-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a Table</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <!--The .form-group class is the easiest way to add some structure to forms-->
+                            <label for="Number of Guests" class="col-sm-4 col-form-label">Number of Guests</label>
+                            <!-- col-form-label is necessary for label to be enabled-->
+                            <div class="col-sm-1 form-check">
+                                <input type="radio" class="form-check-input" id="radio1" name="optradio"
+                                    value="option1">
+                                <label for="radio1" class="form-check-label">1</label>
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                            <div class="col-sm-1 form-check">
+                                <input type="radio" class="form-check-input" id="radio2" name="optradio"
+                                    value="option2">
+                                <label for="radio2" class="form-check-label">2</label>
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                            <div class="col-sm-1 form-check">
+                                <input type="radio" class="form-check-input" id="radio3" name="optradio"
+                                    value="option3">
+                                <label for="radio3" class="form-check-label">3</label>
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                            <div class="col-sm-1 form-check">
+                                <input type="radio" class="form-check-input" id="radio4" name="optradio"
+                                    value="option4">
+                                <label for="radio4" class="form-check-label">4</label>
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                            <div class="col-sm-1 form-check">
+                                <input type="radio" class="form-check-input" id="radio5" name="optradio"
+                                    value="option5">
+                                <label for="radio5" class="form-check-label">5</label>
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                            <div class="col-sm-1 form-check">
+                                <input type="radio" class="form-check-input" id="radio6" name="optradio"
+                                    value="option6">
+                                <label for="radio6" class="form-check-label">6</label>
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <!--The .form-group class is the easiest way to add some structure to forms-->
+                            <label for="section of smoking and non smoking"
+                                class="col-sm-4 col-form-label">Section</label>
+                            <!-- col-form-label is necessary for label to be enabled-->
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-sm btn-success ml-auto active">Non-Smoking</button>
+                                <button type="button" class=" btn btn-danger">Smoking</button>
+                            </div>
+                            <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+
+                        </div>
+                        <div class="form-group row">
+                            <!--The .form-group class is the easiest way to add some structure to forms-->
+                            <label for="Date and Time" class="col-sm-4 col-form-label">Date and Time</label>
+                            <!-- col-form-label is necessary for label to be enabled-->
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="Date" name="Date" placeholder="Date">
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="Time" name="Time" placeholder="Time">
+                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-4 offset-sm-4">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto"
+                                    data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Reserve</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -111,9 +208,13 @@ The attribute role="dialog" improves accessibility for people using screen reade
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning" href="#myCard" data-toggle="tooltip"
+                    <!-- <a role="button" class="btn btn-block nav-link btn-warning" href="#myCard" data-toggle="tooltip"
                         data-html="true" title="Or Call us at<br><strong>+8512345678</strong>"
-                        data-placement="bottom">Reserve Table</a>
+                        data-placement="bottom">Reserve Table</a> -->
+                    <!--the above was for tooltip-->
+                    <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal"
+                        data-target="#ReserveModal">
+                        Reserve Table </a>
                     <!--The toggle tells Bootstrap what to do and the target tells Bootstrap which element is going to open-->
                 </div>
             </div>
@@ -129,6 +230,7 @@ The attribute role="dialog" improves accessibility for people using screen reade
                         <div class="carousel-item active">
                             <img class="d-block img-fluid" src="img/uthappizza.png" alt="uthapizza">
                             <div class="carousel-caption d-none d-md-block">
+                                <!--d-none d-md-block will hide content except md-lg screen-->
                                 <h2>Uthappizza
                                     <span class="badge badge-danger">Hot</span>
                                     <span class="badge badge-secondary badge-pill">$4.99</span>
@@ -173,8 +275,19 @@ The attribute role="dialog" improves accessibility for people using screen reade
                         <li data-target="#mycarousel" data-slide-to="1"></li>
                         <li data-target="#mycarousel" data-slide-to="2"></li>
                     </ol>
-                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><!--to manually control carousel-->
-                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev"><span
+                            class="carousel-control-prev-icon"></span></a>
+                    <!--to manually control carousel-->
+                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next"><span
+                            class="carousel-control-next-icon"></span></a>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,75 +357,75 @@ The attribute role="dialog" improves accessibility for people using screen reade
 
             </div>
         </div>
-        <div class="row row-content" id="myCard">
+        <!-- <div class="row row-content" id="myCard">
             <div class="card col-12 col-sm-8 offset-sm-2">
                 <h3 class="card-header  text-white" style="background-color:rgba(235, 251, 7, 0.958);">Reserve a Table
                 </h3>
                 <div class="card-body">
                     <form>
-                        <div class="form-group row">
-                            <!--The .form-group class is the easiest way to add some structure to forms-->
-                            <label for="Number of Guests" class="col-sm-4 col-form-label">Number of Guests</label>
-                            <!-- col-form-label is necessary for label to be enabled-->
-                            <div class="col-sm-1 form-check">
-                                <input type="radio" class="form-check-input" id="radio1" name="optradio"
+                        <div class="form-group row"> -->
+        <!--The .form-group class is the easiest way to add some structure to forms-->
+        <!-- <label for="Number of Guests" class="col-sm-4 col-form-label">Number of Guests</label> -->
+        <!-- col-form-label is necessary for label to be enabled-->
+        <!-- <div class="col-sm-1 form-check"> -->
+        <!-- <input type="radio" class="form-check-input" id="radio1" name="optradio"
                                     value="option1">
-                                <label for="radio1" class="form-check-label">1</label>
-                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
-                            </div>
-                            <div class="col-sm-1 form-check">
-                                <input type="radio" class="form-check-input" id="radio2" name="optradio"
+                                <label for="radio1" class="form-check-label">1</label> -->
+        <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+        <!-- </div>
+                            <div class="col-sm-1 form-check"> -->
+        <!-- <input type="radio" class="form-check-input" id="radio2" name="optradio"
                                     value="option2">
-                                <label for="radio2" class="form-check-label">2</label>
-                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
-                            </div>
+                                <label for="radio2" class="form-check-label">2</label> -->
+        <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+        <!-- </div>
                             <div class="col-sm-1 form-check">
                                 <input type="radio" class="form-check-input" id="radio3" name="optradio"
                                     value="option3">
-                                <label for="radio3" class="form-check-label">3</label>
-                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
-                            </div>
+                                <label for="radio3" class="form-check-label">3</label> -->
+        <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+        <!-- </div>
                             <div class="col-sm-1 form-check">
                                 <input type="radio" class="form-check-input" id="radio4" name="optradio"
                                     value="option4">
-                                <label for="radio4" class="form-check-label">4</label>
-                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
-                            </div>
+                                <label for="radio4" class="form-check-label">4</label> -->
+        <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+        <!-- </div>
                             <div class="col-sm-1 form-check">
                                 <input type="radio" class="form-check-input" id="radio5" name="optradio"
                                     value="option5">
-                                <label for="radio5" class="form-check-label">5</label>
-                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
-                            </div>
+                                <label for="radio5" class="form-check-label">5</label> -->
+        <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+        <!-- </div>
                             <div class="col-sm-1 form-check">
                                 <input type="radio" class="form-check-input" id="radio6" name="optradio"
                                     value="option6">
-                                <label for="radio6" class="form-check-label">6</label>
-                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
-                            </div>
+                                <label for="radio6" class="form-check-label">6</label> -->
+        <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+        <!-- </div>
                         </div>
-                        <div class="form-group row">
-                            <!--The .form-group class is the easiest way to add some structure to forms-->
-                            <label for="Date and Time" class="col-sm-4 col-form-label">Date and Time</label>
-                            <!-- col-form-label is necessary for label to be enabled-->
-                            <div class="col-sm-4">
-                                <input type="text" class="form-control" id="Date" name="Date" placeholder="Date">
-                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
-                            </div>
-                            <div class="col-sm-4">
-                                <input type="text" class="form-control" id="Time" name="Time" placeholder="Time">
-                                <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
-                            </div>
+                        <div class="form-group row"> -->
+        <!--The .form-group class is the easiest way to add some structure to forms-->
+        <!-- <label for="Date and Time" class="col-sm-4 col-form-label">Date and Time</label> -->
+        <!-- col-form-label is necessary for label to be enabled-->
+        <!-- <div class="col-sm-4">
+                                <input type="text" class="form-control" id="Date" name="Date" placeholder="Date"> -->
+        <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+        <!-- </div>
+                            <div class="col-sm-4"> -->
+        <!-- <input type="text" class="form-control" id="Time" name="Time" placeholder="Time"> -->
+        <!-- class="form-control"--Give textual form controls like <input> s and <textarea> s an upgrade with custom styles, sizing, focus states, and more.-->
+        <!-- </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-8 offset-sm-4">
                                 <button type="submit" class="btn btn-primary">Reserve</button>
                             </div>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                    </form> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
     </div>
 
     <footer class="footer">
@@ -366,10 +479,23 @@ The attribute role="dialog" improves accessibility for people using screen reade
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
+        $(document).ready(function(){
+           $('#mycarousel').carousel({interval:2000});
+           
+           $('#carousel-pause').click(function(){
+            $('#mycarousel').carousel('pause');
+           });
+
+           $('#carousel-play').click(function(){
+            $('#mycarousel').carousel('cycle');
+           });
+        });
+    </script>
+    <!-- <script>this function was for tooltip
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
-    </script>
+    </script> -->
     <!--The ready event occurs when the DOM (document object model) has been loaded.Because this event occurs after the document is ready, it is a good place to have all other jQuery events and functions. Like in the example above.-->
     <!--The dollar sign is commonly used as a shortcut to the function document.getElementById().-->
     <!--The dollar sign ($) and the underscore (_) characters are JavaScript identifiers, which just means that they identify an object in the same way a name would.-->
