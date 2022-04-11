@@ -8,10 +8,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
+
+    <!--build:css css/main.css-->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+
     <!--This will include Bootstrap CSS into your web page. Note the subtle change in the fonts of the content of the web page. This is the Bootstrap typography effect coming into play -->
     <!-- The default Bootstrap typography sets the font to Helvetica Neue and selects the appropriate font size based on the choice of the heading style and paragraph style for the content.-->
     <title>Ristorante Con Fusion</title>
@@ -487,9 +491,12 @@ The attribute role="dialog" improves accessibility for people using screen reade
         </div>
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js-->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!--endbuild-->
     <!-- <script>
         $(document).ready(function(){
            $('#mycarousel').carousel({interval:2000});
@@ -503,7 +510,7 @@ The attribute role="dialog" improves accessibility for people using screen reade
            });
         });
     </script> -->
-    <script src="js/scripts.js"></script>
+    
     <!-- <script>this function was for tooltip
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
